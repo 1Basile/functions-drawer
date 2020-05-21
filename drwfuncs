@@ -1,0 +1,11 @@
+#!/bin/bash
+
+py=$(type python3)
+
+if [ "$?" == "1" ]; then
+  echo "Python is requiered to programm work properly."
+  echo "Please make sure, it\`s installed."
+else
+  python3  "${0}_dir/${0##*/}.py" $@
+fi
+
