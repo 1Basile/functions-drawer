@@ -10,11 +10,11 @@ def std_input() -> (tuple, dict):
     if "." in script_name:
         script_name = script_name.split(".")[0]
     usage = "usage: %prog [options] functions...\nfunctions - number of functions separated by space, covered with quotes."
-    epilog = f"Using example: {script_name} --bondaries=[-1,1] \"y=sin(x)\" \"cos(x)\""
+    epilog = f"Using example: {script_name} --boundaries=[-1,1] \"y=sin(x)\" \"cos(x)\""
     description = "Script draw graphs of given functions."
     parser = OptionParser(usage=usage, version="%prog 1.0", epilog=epilog, prog=script_name, description=description)
     parser.add_option("-b", "--boundaries", dest="boundaries", type="str", help="Define x values range. Example: [-1,5]",
-                      default='(0, 14)')
+                      default='[0,14]')
     parser.add_option("-a", "--accurate", dest="accurate", type="int", help="Number of points. Example: 100", default=70)
     parser.add_option('-i', '--indent', dest="indent", type='int', help="Set indent between graphs.", default=15)
     parser.add_option('-t', '--no-table', action="store_true", dest="no_tabel", help="Remove values table.",
